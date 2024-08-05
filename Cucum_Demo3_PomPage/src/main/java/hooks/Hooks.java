@@ -26,13 +26,16 @@ public class Hooks {
 		p = Generic_Utilities.BaseClass.getProperties();
 		driver.get(p.getProperty("appURL"));
 		driver.manage().window().maximize();
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 	}
 
 	@After
-	public void tearDown() {
+	public void tearDown() throws InterruptedException {
 
 		
             driver.quit();
+            Thread.sleep(5000);
      
 
 	}

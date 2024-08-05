@@ -63,6 +63,7 @@ public class FirstLoginStepDefinition {
 		
 		WebDriverWait wait = new WebDriverWait(Generic_Utilities.BaseClass.getDriver(), Duration.ofSeconds(10));
         try {
+        	
         	WebElement header = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h6[contains(@class, 'oxd-topbar-header-breadcrumb-module')]")));
             String dashboard_text = header.getText();
             System.out.println(dashboard_text);
@@ -113,7 +114,7 @@ public class FirstLoginStepDefinition {
 	            {
 	                if(targetpage==true)
 	                {
-	                	Pom_HomePage hp=new Pom_HomePage(Generic_Utilities.BaseClass.getDriver());
+	                hp=new Pom_HomePage(Generic_Utilities.BaseClass.getDriver());
 	                   hp.getProfile_drpdown().click();
 	                   hp.getProfile_logout().click();
 	           
